@@ -17,6 +17,9 @@ use app\Http\Controller\productController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('home', function () {
+    return View::make('pages.home');
+});
 
 Route::get('product', [
     'uses' => 'productController@index',
