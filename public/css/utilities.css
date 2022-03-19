@@ -66,6 +66,7 @@
     text-transform: capitalize;
     font-size: 3rem;
     margin-bottom: 0.8rem;
+    padding-top: 0.8rem;
 }
 .section-title .line{
     height: 1px;
@@ -78,7 +79,8 @@
 
 /* product info stylings */
 .info{
-    padding: 2rem;
+    padding: 0.2rem;
+    text-align: center;
 }
 .info .ratings span{
     margin-left: .2rem;

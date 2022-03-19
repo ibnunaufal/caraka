@@ -6,16 +6,17 @@
                 <p class = "text">Caraka Creasindo Furniture is an Indonesian furniture company based in Jepara, Central Java, Indonesia. We are specialized in manufacture and export wooden furniture for more than 10 years. </p>
                 <ul class = "social-links flex">
                     <li>
-                        <a href = "#" class = "flex"><i class = "fab fa-facebook-f"></i></a>
+                        <!-- <a href = "#" class = "flex"><i class = "fab fa-facebook-f"></i></a> -->
+                        <img style="width: 30px;height: 30px;" src="{{ asset('images/icon/logo-whatsapp.svg') }}" alt="">
                     </li>
                     <li>
-                        <a href = "#" class = "flex"><i class = "fab fa-instagram"></i></a>
+                        <img style="width: 30px;height: 30px;" src="{{ asset('images/icon/logo-instagram.svg') }}" alt="">
                     </li>
                     <li>
-                        <a href = "#" class = "flex"><i class = "fab fa-twitter"></i></a>
+                        <img style="width: 30px;height: 30px;" src="{{ asset('images/icon/logo-instagram.svg') }}" alt="">
                     </li>
                     <li>
-                        <a href = "#" class = "flex"><i class = "fab fa-pinterest"></i></a>
+                        <img style="width: 30px;height: 30px;" src="{{ asset('images/icon/logo-instagram.svg') }}" alt="">
                     </li>
                 </ul>
             </div>
@@ -27,14 +28,14 @@
                 <p class = "text">Email: carakacreasindo@yahoo.com</p>
             </div>
 
-            <div class = "footer-item">
+            <!-- <div class = "footer-item">
                 <h3>Recent Post</h3>
                 <ul>
                     <li class = "text"><a href = "#">BELVAN QUEEN BED SET</a></li>
                     <li class = "text"><a href = "#">HASHIQO QUEEN BED SET</a></li>
                     <li class = "text"><a href = "#">VANIA QUEEN BED SET</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- <div class = "footer-item">
                 <h3>Our Portfolio</h3>
@@ -52,11 +53,11 @@
         <div class = "container grid">
             <p class = "text text-white text-center">&copy; Copyright 2021. All Right Reserved. Designed and Developed by Someone</p>
             <div class = "flex payment">
-                <img src = "images/pay_1.png">
-                <img src = "images/pay_2.png">
-                <img src = "images/pay_3.png">
-                <img src = "images/pay_4.png">
-                <img src = "images/pay_5.png">
+                <img src="{{ asset('images/pay_1.png') }}" alt="">
+                <img src="{{ asset('images/pay_2.png') }}" alt="">
+                <img src="{{ asset('images/pay_3.png') }}" alt="">
+                <img src="{{ asset('images/pay_4.png') }}" alt="">
+                <img src="{{ asset('images/pay_5.png') }}" alt="">
             </div>
         </div>
     </div>

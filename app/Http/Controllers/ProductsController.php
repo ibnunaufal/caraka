@@ -10,4 +10,9 @@ class ProductsController extends Controller
     public function index(){
         
     }
+    public function show(Student $student)
+    {
+        //
+        return view('pages.view',compact('student'));
+    }
 }

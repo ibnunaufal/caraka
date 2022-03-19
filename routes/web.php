@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controller\productController;
+use app\Http\Controller\ProductController;
+use app\Http\Controller\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,27 @@ use app\Http\Controller\productController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('user','UserController');
+
+Route::resource('student','StudentController');
+
+Route::resource('product','ProductController');
+
+Route::resource('category','CategoryController');
+
+Route::resource('gallery','GalleryController');
+
+Route::resource('admin','AdminController');
+
+Route::resource('','HomeController');
+// Route::get('/', function () {
+//     return View::make('home');
+// });
 Route::get('home', function () {
     return View::make('pages.home');
 });
 
-Route::get('product', [
-    'uses' => 'productController@index',
-    'as' => 'product.index'
-]);
+// Route::get('product', [
+//     'uses' => 'productController@index',
+//     'as' => 'product.index'
+// ]);

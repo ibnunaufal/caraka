@@ -1,12 +1,64 @@
 @extends('layouts.app')
 @section('content')
+<!-- header -->
+<header class = "header bg-light-brown flex" id = "home">
+    <div class = "container">
+        <div class = "header-content grid text-center">
+            <div class = "header-left">
+                <h1>Caraka Furniture</h1>
+                <p class = "text">Caraka Creasindo Furniture is an Indonesian furniture company based in Jepara, Central Java, Indonesia. We are specialized in manufacture and export wooden furniture for more than 10 years. </p>
+                <a href = "#" class = "btn-header text-white bg-brown">Read More</a>
+            </div>
+
+            <div class = "header-right">
+                <img src = "images/header1.png">
+            </div>
+            <img src = "images/header-shape.png" class = "header-shape">
+        </div>
+    </div>
+</header>
+<!-- end of header -->
 <main>
+<section class = "featured-deals bg-light-grey-color-shade py" id = "featured-deals">
+        <div class = "container">
+            <div class = "featured-deals-content grid">
+                @foreach ($data['category'] as $data)
+                    <a class="btn" href="{{ route('category.show',$data->id) }}">
+                        <div class = "featured-deals-item">
+                            <div class = "image">
+                                <img src = "images/0666-01.png">
+                            </div>
+                            <div class = "info bg-white">
+                                <p class = "name" > {{ $data->name }} </p>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- catalog section -->
+    <section class = "catalog bg-brown" id = "catalog">
+        <div class = "catalog-content grid text-center">
+            <div class = "catalog-left"></div>
+            <div class = "catalog-right text-white flex py">
+                <div class = "section-title">
+                    <h2>modern living quarters</h2>
+                </div>
+                <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque doloribus, repellat dolor nisi nihil facilis voluptatibus porro deleniti recusandae?</p>
+                <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, sequi distinctio corporis pariatur excepturi minima!</p>
+            </div>
+        </div>
+    </section>
+    <!-- end of catalog section -->
+
     <!-- top new products section -->
     <section id = "new-products" class = "new-products py bg-light-grey-color-shade">
         <div class = "container">
             <div class = "section-title text-center">
-                <h2>Top New Product</h2>
-                <p class = "lead">Produk baru dengan penjualan tertinggi.</p>
+                <h2>New Arrival Product</h2>
+                <p class = "lead">Produk keluaran terbaru.</p>
                 <div class = "line"></div>
             </div>
 
@@ -17,84 +69,57 @@
                         <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
                     </div>
                     <div class = "info">
-                        <div class = "ratings text-grey">
+                        <!-- <div class = "ratings text-grey">
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-light-grey"></i>
-                        </div>
-                        <span>(10 Reviews)</span>
+                        </div> -->
+                        <span>Indoor</span>
                         <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
                         <div class = "price">
-                            <span class = "old text-grey">Rp 800.000</span>
-                            <span class = "new text-brown">Rp 791.000</span>
+                            <span class = "old text-grey">Meja, Kayu</span>
                         </div>
                     </div>
                 </div>
-
                 <div class = "new-product-item">
                     <div class = "image">
-                        <img src = "images/0560-02.png" alt = "">
-                        <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span>
+                        <img src = "images/0560-01.png" alt = "">
+                        <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
                     </div>
                     <div class = "info">
-                        <div class = "ratings text-grey">
+                        <!-- <div class = "ratings text-grey">
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-light-grey"></i>
-                        </div>
-                        <span>(10 Reviews)</span>
+                        </div> -->
+                        <span>Indoor</span>
                         <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
                         <div class = "price">
-                            <span class = "old text-grey">Rp 800.000</span>
-                            <span class = "new text-brown">Rp 791.000</span>
+                            <span class = "old text-grey">Meja, Kayu</span>
                         </div>
                     </div>
                 </div>
-
                 <div class = "new-product-item">
                     <div class = "image">
-                        <img src = "images/0560-03.png" alt = "">
-                        <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span>
+                        <img src = "images/0560-01.png" alt = "">
+                        <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
                     </div>
                     <div class = "info">
-                        <div class = "ratings text-grey">
+                        <!-- <div class = "ratings text-grey">
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-light-grey"></i>
-                        </div>
-                        <span>(10 Reviews)</span>
+                        </div> -->
+                        <span>Indoor</span>
                         <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
                         <div class = "price">
-                            <span class = "old text-grey">Rp 800.000</span>
-                            <span class = "new text-brown">Rp 791.000</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "new-product-item">
-                    <div class = "image">
-                        <img src = "images/0560-04.png" alt = "">
-                        <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span>
-                    </div>
-                    <div class = "info">
-                        <div class = "ratings text-grey">
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-light-grey"></i>
-                        </div>
-                        <span>(10 Reviews)</span>
-                        <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
-                        <div class = "price">
-                            <span class = "old text-grey">Rp 800.000</span>
-                            <span class = "new text-brown">Rp 791.000</span>
+                            <span class = "old text-grey">Meja, Kayu</span>
                         </div>
                     </div>
                 </div>
@@ -137,7 +162,7 @@
     <!-- end of category section -->
 
     <!-- featured deals section -->
-    <section class = "featured-deals bg-light-grey-color-shade py" id = "featured-deals">
+    <!-- <section class = "featured-deals bg-light-grey-color-shade py" id = "featured-deals">
         <div class = "container">
             <div class = "section-title text-center">
                 <h2>featured deals</h2>
@@ -227,11 +252,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- end of featured deals section -->
 
     <!-- catalog section -->
-    <section class = "catalog bg-brown" id = "catalog">
+    <!-- <section class = "catalog bg-brown" id = "catalog">
         <div class = "catalog-content grid text-center">
             <div class = "catalog-left"></div>
             <div class = "catalog-right text-white flex py">
@@ -242,7 +267,7 @@
                 <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, sequi distinctio corporis pariatur excepturi minima!</p>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- end of catalog section -->
 
     <!-- latest news section -->
@@ -311,15 +336,21 @@
     <!-- end of latest news section -->
 
     <!-- feedback section -->
-    <section class = "feedback py bg-light-grey-color-shade" id = "feedback">
+    <section class = "feedback bg-light-grey-color-shade" id = "feedback">
         <div class = "container">
             <div class = "section-title text-center">
-                <h2>Feedback</h2>
-                <p class = "lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>About</h2>
+                <!-- <p class = "lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
                 <div class = "line"></div>
             </div>
 
-            <div class = "feedback-inner">
+            <div class="about-container">
+                <div class="about-item bg-white text-center"">
+                asdddss asdasd asdasd asdasd asd
+                </div>
+            </div>
+
+            <!-- <div class = "feedback-inner">
                 <div class = "feedback-container grid">
                     <div class = "feedback-item bg-white text-center" data-id = "1">
                         <img src = "images/quote-icon-dark.png" class = "quote-icon">
@@ -350,13 +381,13 @@
                 <button class = "feedback-btn feedback-active-btn"></button>
                 <button class = "feedback-btn"></button>
                 <button class = "feedback-btn"></button>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- end of feedback section -->
 
     <!-- newsletter section -->
-    <section class = "newsletter py bg-light-grey-color-shade" id = "newsletter">
+    <!-- <section class = "newsletter py bg-light-grey-color-shade" id = "newsletter">
         <div class = "container">
             <div class = "section-title text-center">
                 <h2>Newsletter</h2>
@@ -373,7 +404,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- end of newsletter section -->
 </main>
 @stop

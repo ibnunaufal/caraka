@@ -1,0 +1,98 @@
+<nav class = "navbar bg-brown flex">
+    <div class = "container flex">
+        <div class = "toggler-and-category bg-brown text-white flex">
+            <button type = "button" class = "btn navbar-show-btn text-white">
+                <!-- <i class = "fas fa-bars"></i> -->
+                <img style="zoom: 0.1;" src="{{ asset('images/icon/menu-outline.svg') }}" alt="">
+            </button>
+            <div class = "category-list">
+                <a href="{{ url('/') }}">
+                    <span>Caraka</span>
+                </a>
+                
+                <!-- <button type = "button" class = "btn category-toggler-btn text-white">
+                    <i class = "fas fa-circle-arrow-down"></i>
+                </button> -->
+            </div>
+
+            <!-- side navbar -->
+            <ul id = "side-navbar" class = "bg-white text-uppercase">
+                <button type = "button" class = "btn navbar-hide-btn text-dark">
+                    <img style="zoom: 0.1;" src="{{ asset('images/icon/close-outline.svg') }}" alt="">
+                </button>
+                <li><a href = "{{ url('category/1') }}">Indoor</a></li>
+                <li><a href = "{{ url('category/2') }}">Outdoor</a></li>
+                <li><a href = "{{ url('category/3') }}">Luxury Bedroom</a></li>
+                <li><a href = "{{ url('category/5') }}">Resin</a></li>
+                <li><a href = "{{ url('category/4') }}">Kitchen Ware</a></li>
+                <li><a href = "{{ url('gallery') }}">Gallery</a></li>
+                <!-- <li><a href = "#">Catalogues</a></li> -->
+                <li><a href = "#">Store Locator</a></li>
+                <li><a href = "#">Login</a></li>
+                <li><a href = "#">Search</a></li>
+            </ul>
+            <!-- end of side navbar -->
+        </div>
+
+        <!-- main navigation list -->
+        <div class = "navbar-collapse flex">
+            <!-- nav list -->
+            <ul class = "navbar-nav text-uppercase">
+                <li class = "nav-item">
+                    <!-- <a href = "#" class = "nav-link active-link"> -->
+                    <a href = "/" class = "nav-link">
+                        <span class = "nav-link-text">Home</span>
+                    </a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link">
+                        <span class = "nav-link-text category-toggler-btn">Category</span>
+                        <button type = "button" class = "btn category-toggler-btn text-white">
+                            <!-- <i class = "fas fa-circle-arrow-down"></i> -->
+                            <ul id = "category-list-items" class = "bg-white">
+                                <li><a href = "{{ url('category/1') }}">Indoor</a></li>
+                                <li><a href = "{{ url('category/2') }}">Outdoor</a></li>
+                                <li><a href = "{{ url('category/3') }}">Luxury Bedroom</a></li>
+                                <li><a href = "{{ url('category/5') }}">Resin</a></li>
+                                <li><a href = "{{ url('category/4') }}">Kitchen Ware</a></li>
+                                <li><a href = "{{ url('gallery') }}">Gallery</a></li>
+                                <!-- <li><a href = "#">Catalogues</a></li> -->
+                                <li><a href = "#">Store Locator</a></li>
+                                <li><a href = "#">Login</a></li>
+                                <li><a href = "#">Search</a></li>
+                            </ul>
+                        </button>
+                    </a>
+                </li>
+                <!-- <li class = "nav-item">
+                    <a href = "#" class = "nav-link">
+                        <span class = "nav-link-text">Indoor</span>
+                    </a>
+                </li> -->
+                <li class = "nav-item">
+                    <a href = "#" class = "nav-link">
+                        <span class = "nav-link-text">About</span>
+                    </a>
+                </li>
+                <li class = "nav-item">
+                    <a href = "#" class = "nav-link">
+                        <span class = "nav-link-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- end of nav list -->
+
+            <!-- account icons -->
+            <!-- <div class = "account-info">
+                <a href = "#" class = "btn text-white">
+                    <i class = "fas fa-person"></i>
+                </a>
+                <a href = "#" class = "btn text-white">
+                    <i class = "fas fa-shopping-basket"></i>
+                </a>
+            </div> -->
+            <!-- end of account icons -->
+        </div>
+        <!-- end of main navigation list -->
+    </div>
+</nav>
