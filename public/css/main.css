@@ -45,6 +45,13 @@ button{
     margin-left: 20%;
     margin-right: 20%;
 }
+.form-group{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.form-control{
+    width: 100%;
+}
 .table{
     
 }
@@ -57,19 +64,19 @@ button{
 .btn-primary{
     background: rgb(0, 162, 255);
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     color: white;
 }
 .btn-info{
     background: rgb(1, 193, 1);
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     color: white;
 }
 .btn-danger{
     background: red;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     color: white;
 }
 /* tbody, tr, th, td{

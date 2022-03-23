@@ -34,6 +34,9 @@ Route::resource('','HomeController');
 Route::get('home', function () {
     return View::make('pages.home');
 });
+Route::get('locator', function () {
+    return View::make('pages.locator');
+});
 
 // Route::get('product', [
 //     'uses' => 'productController@index',

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Home;
+use App\Models\Admin;
+use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $data = array(
-            'gallery' => Gallery::latest()->take(4)->get(),
-            'category'  => Category::take(4)->get()
-        );
-        // return view('pages.home', compact('data', 'data'));
-        return view('pages.home')
-        ->with('gallery', Gallery::latest()->take(4)->get())
-        ->with('category', Category::take(4)->get()); 
+        return view('pages.admin')
+        ->with('gallery', Gallery::all())
+        ->with('category', Category::all()); 
     }
 
     /**
@@ -51,10 +46,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Home $home)
+    public function show(Admin $admin)
     {
         //
     }
@@ -62,10 +57,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Home $home)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -74,10 +69,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home $home)
+    public function update(Request $request, Admin $admin)
     {
         //
     }
@@ -85,10 +80,10 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home $home)
+    public function destroy(Admin $admin)
     {
         //
     }

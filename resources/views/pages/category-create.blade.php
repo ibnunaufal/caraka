@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <main>
-
+<!-- https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/view?usp=sharing -->
+  
     <section id = "new-products" class = "new-products py bg-light-grey-color-shade">
         <div class = "container">
             <div class = "section-title" >
                 
-                <h2 class="text-center">Update Category</h2>
+                <h2 class="text-center">Add Category</h2>
                 <div class = "line"></div>
                 <br>
                 <div class="product">
@@ -20,20 +21,19 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('category.update',$category->id) }}" >
-                        @method('PATCH')
+                    <form action="{{ route('category.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="txtName">Name:</label>
-                            <input type="text" class="form-control" id="txtName" placeholder="Enter Name" name="txtName" value="{{ $category->name }}">
+                            <input type="text" class="form-control" id="txtName" placeholder="Enter Name" name="txtName">
                         </div>
                         <div class="form-group">
-                            <label for="txtImage">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Image Url" name="txtImage" value="{{ $category->image }}">
+                            <label for="txtLastName">Image:</label>
+                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Price" name="txtImage">
                         </div>
                         <div class="form-group">
-                            <label for="txtPdf">Pdf:</label>
-                            <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter PDF Url">{{ $category->pdf }}</textarea>
+                            <label for="txtLastName">Pdf:</label>
+                            <input type="text" class="form-control" id="txtPdf" placeholder="Enter Category" name="txtPdf">
                         </div>
                         <!-- <div class="form-group">
                             <label for="txtLastName">Image:</label>
@@ -50,8 +50,5 @@
             </div>
         </div>
     </section>
- 
-    
-    
 </main>
 @stop

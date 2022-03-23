@@ -6,7 +6,7 @@
         <div class = "container">
             <div class = "section-title" >
                 
-                <h2 class="text-center">Update Category</h2>
+                <h2 class="text-center">Update gallery</h2>
                 <div class = "line"></div>
                 <br>
                 <div class="product">
@@ -20,21 +20,29 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('category.update',$category->id) }}" >
+                    <form method="put" action="{{ route('gallery.update',$gallery->id) }}" >
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
                             <label for="txtName">Name:</label>
-                            <input type="text" class="form-control" id="txtName" placeholder="Enter Name" name="txtName" value="{{ $category->name }}">
+                            <input type="text" class="form-control" id="txtName" placeholder="Enter First Name" name="txtName" value="{{ $gallery->name }}">
                         </div>
                         <div class="form-group">
-                            <label for="txtImage">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Image Url" name="txtImage" value="{{ $category->image }}">
+                            <label for="txtName">Price:</label>
+                            <input type="text" class="form-control" id="txtPrice" placeholder="Enter Price" name="txtPrice" value="{{ $gallery->price }}">
                         </div>
                         <div class="form-group">
-                            <label for="txtPdf">Pdf:</label>
-                            <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter PDF Url">{{ $category->pdf }}</textarea>
+                            <label for="txtName">Category:</label>
+                            <input type="text" class="form-control" id="txtCategory" placeholder="Enter Category" name="txtCategory" value="{{ $gallery->category }}">
                         </div>
+                        <div class="form-group">
+                            <label for="txtLastName">Image:</label>
+                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Last Name" name="txtImage" value="{{ $gallery->image }}">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="txtLastName">Pdf:</label>
+                            <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter Address">{{ $gallery->pdf }}</textarea>
+                        </div> -->
                         <!-- <div class="form-group">
                             <label for="txtLastName">Image:</label>
                             <input type="text" class="form-control" id="txtImage" placeholder="Enter Image" name="txtImage">

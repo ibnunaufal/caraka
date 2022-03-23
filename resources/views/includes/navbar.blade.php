@@ -7,7 +7,7 @@
             </button>
             <div class = "category-list">
                 <a href="{{ url('/') }}">
-                    <span>Caraka</span>
+                    <span style="color: white;">Caraka</span>
                 </a>
                 
                 <!-- <button type = "button" class = "btn category-toggler-btn text-white">
@@ -27,8 +27,8 @@
                 <li><a href = "{{ url('category/4') }}">Kitchen Ware</a></li>
                 <li><a href = "{{ url('gallery') }}">Gallery</a></li>
                 <!-- <li><a href = "#">Catalogues</a></li> -->
-                <li><a href = "#">Store Locator</a></li>
-                <li><a href = "#">Login</a></li>
+                <li><a href = "{{ url('locator') }}">Store Locator</a></li>
+                <li><a href = "{{ url('admin') }}">Login</a></li>
                 <li><a href = "#">Search</a></li>
             </ul>
             <!-- end of side navbar -->
@@ -57,7 +57,7 @@
                                 <li><a href = "{{ url('category/4') }}">Kitchen Ware</a></li>
                                 <li><a href = "{{ url('gallery') }}">Gallery</a></li>
                                 <!-- <li><a href = "#">Catalogues</a></li> -->
-                                <li><a href = "#">Store Locator</a></li>
+                                <li><a href = "{{ url('locator') }}">Store Locator</a></li>
                                 <li><a href = "#">Login</a></li>
                                 <li><a href = "#">Search</a></li>
                             </ul>

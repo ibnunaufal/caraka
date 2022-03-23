@@ -22,7 +22,7 @@
 <section class = "featured-deals bg-light-grey-color-shade py" id = "featured-deals">
         <div class = "container">
             <div class = "featured-deals-content grid">
-                @foreach ($data['category'] as $data)
+                @foreach ($category as $data)
                     <a class="btn" href="{{ route('category.show',$data->id) }}">
                         <div class = "featured-deals-item">
                             <div class = "image">
@@ -63,66 +63,42 @@
             </div>
 
             <div class = "new-products-content grid">
-                <div class = "new-product-item">
+                @foreach ($gallery as $gal)                    
+                    <div class = "new-product-item">
+                        <a class="btn" href="{{ route('gallery.show',$gal->id) }}">
+                            <div class = "image">
+                                <img src = "images/0560-01.png" alt = "">
+                            </div>
+                            <div class = "info">
+                                <span> {{ $gal->name }} </span>
+                                <p class = "name">{{ $gal->name }}</p>
+                                <div class = "price">
+                                    <span class = "old text-grey">Meja, Kayu</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+                <!-- <div class = "new-product-item">
                     <div class = "image">
                         <img src = "images/0560-01.png" alt = "">
-                        <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
+                        <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span>
                     </div>
                     <div class = "info">
-                        <!-- <div class = "ratings text-grey">
+                        <div class = "ratings text-grey">
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-brown"></i>
                             <i class = "fas fa-star text-light-grey"></i>
-                        </div> -->
+                        </div>
                         <span>Indoor</span>
                         <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
                         <div class = "price">
                             <span class = "old text-grey">Meja, Kayu</span>
                         </div>
                     </div>
-                </div>
-                <div class = "new-product-item">
-                    <div class = "image">
-                        <img src = "images/0560-01.png" alt = "">
-                        <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
-                    </div>
-                    <div class = "info">
-                        <!-- <div class = "ratings text-grey">
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-light-grey"></i>
-                        </div> -->
-                        <span>Indoor</span>
-                        <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
-                        <div class = "price">
-                            <span class = "old text-grey">Meja, Kayu</span>
-                        </div>
-                    </div>
-                </div>
-                <div class = "new-product-item">
-                    <div class = "image">
-                        <img src = "images/0560-01.png" alt = "">
-                        <!-- <span class = "badge bg-brown text-white text-center text-uppercase">Disc</span> -->
-                    </div>
-                    <div class = "info">
-                        <!-- <div class = "ratings text-grey">
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-brown"></i>
-                            <i class = "fas fa-star text-light-grey"></i>
-                        </div> -->
-                        <span>Indoor</span>
-                        <p class = "name">MIDCENT CHEST OF 6 DRAWERS</p>
-                        <div class = "price">
-                            <span class = "old text-grey">Meja, Kayu</span>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

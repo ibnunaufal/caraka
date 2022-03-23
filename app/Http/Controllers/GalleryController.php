@@ -79,7 +79,7 @@ class GalleryController extends Controller
     public function edit(Gallery $gallery)
     {
         //
-        return view('gallery-edit',compact('gallery'));
+        return view('pages/gallery-edit',compact('gallery'));
     }
 
     /**
@@ -93,20 +93,22 @@ class GalleryController extends Controller
     {
         //
         $request->validate([
-            'txtFirstName'=>'required',
-            'txtLastName'=> 'required',
-            'txtAddress' => 'required'
+            'txtName'=>'required',
+            'txtPrice'=> 'required',
+            'txtCategory' => 'required',
+            'txtImage' => 'required'
         ]);
  
  
         $gallery = gallery::find($id);
-        $gallery->first_name = $request->get('txtFirstName');
-        $gallery->last_name = $request->get('txtLastName');
-        $gallery->address = $request->get('txtAddress');
+        $gallery->name = $request->get('txtName');
+        $gallery->price = $request->get('txtPrice');
+        $gallery->category = $request->get('txtCategory');
+        $gallery->image = $request->get('txtImage');
  
         $gallery->update();
  
-        return redirect('/gallery')->with('success', 'gallery updated successfully');
+        return redirect('/admin')->with('success', 'gallery updated successfully');
     
     }
 
@@ -120,7 +122,7 @@ class GalleryController extends Controller
     {
         //
         $gallery->delete();
-        return redirect('/gallery')->with('success', 'gallery deleted successfully');
+        return redirect('/admin')->with('success', 'gallery deleted successfully');
     
     }
 }

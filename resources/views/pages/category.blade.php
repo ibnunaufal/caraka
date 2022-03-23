@@ -27,8 +27,9 @@
 <!-- https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/view?usp=sharing -->
     <!-- <div style="text-align: center; margin: 40px 0px 20px 0px";> -->
     <div class="iframe-container">
+
         <!-- <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" width="640" height="480" allow="autoplay"></iframe> -->
-        <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" allow="autoplay" class="iframe-responsive"></iframe>
+        <!-- <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" allow="autoplay" class="iframe-responsive"></iframe> -->
     </div>
     <div class="row">
         <div class="col-lg-11">

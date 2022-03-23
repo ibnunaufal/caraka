@@ -27,6 +27,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('pages.category-create');
     }
 
     /**
@@ -38,6 +39,21 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'txtName'=>'required',
+            'txtImage'=> 'required',
+            'txtPdf' => 'required'
+        ]);
+ 
+        $category = new category([
+            'name' => $request->get('txtName'),
+            'image'=> $request->get('txtImage'),
+            'pdf'=> $request->get('txtPdf')
+        ]);
+ 
+        $category->save();
+        return redirect('/category')->with('success', 'category has been added');
+    
     }
 
     /**
@@ -71,7 +87,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request,$id)
     {
         //
         $request->validate([
@@ -88,7 +104,7 @@ class CategoryController extends Controller
  
         $category->update();
  
-        return redirect('/category')->with('success', 'category updated successfully');
+        return redirect('/admin')->with('success', 'category updated successfully');
     
     }
 
@@ -102,6 +118,6 @@ class CategoryController extends Controller
     {
         //
         $category->delete();
-        return redirect('/category')->with('success', 'category deleted successfully');
+        return redirect('/admin')->with('success', 'category deleted successfully');
     }
 }
