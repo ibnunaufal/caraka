@@ -43,18 +43,43 @@ class GalleryController extends Controller
             'txtName'=>'required',
             'txtPrice'=> 'required',
             'txtCategory' => 'required',
-            'txtImage' => 'required'
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
+        // $path = $request->file('image')->store('public/images');
+
+        $image = $request->file('image');
+        $request->image = $image->getClientOriginalName();
+        $image->move(public_path('img/logo'), $image->getClientOriginalName());
+        // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
+        $path = $image->getClientOriginalName();
+        // time().'.'.$request->file->getClientOriginalExtension();
+            
+        // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        // $request->file->move(public_path('/images/gallert/'), $imageName);
+
+        $post = new gallery;
+        $post->name = $request->get('txtName');
+        $post->price = $request->get('txtPrice');
+        $post->category = $request->get('txtCategory');
+        $post->image = $path;
+        $post->save();
+
+        // $request->validate([
+        //     'txtName'=>'required',
+        //     'txtPrice'=> 'required',
+        //     'txtCategory' => 'required',
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        // ]);
  
-        $gallery = new gallery([
-            'name' => $request->get('txtName'),
-            'price'=> $request->get('txtPrice'),
-            'category'=> $request->get('txtCategory'),
-            'image'=> $request->get('txtImage')
-        ]);
+        // $gallery = new gallery([
+        //     'name' => $request->get('txtName'),
+        //     'price'=> $request->get('txtPrice'),
+        //     'category'=> $request->get('txtCategory'),
+        //     'image' = $path;
+        // ]);
  
-        $gallery->save();
-        return redirect('/gallery')->with('success', 'gallery has been added');
+        // $gallery->save();
+        return redirect('/admin')->with('success', 'gallery has been added');
     
     }
 

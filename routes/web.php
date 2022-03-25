@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use app\Http\Controller\ProductController;
 use app\Http\Controller\StudentController;
+use app\Http\Controller\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,25 @@ Route::resource('category','CategoryController');
 Route::resource('gallery','GalleryController');
 
 Route::resource('admin','AdminController');
+
+Route::get('/uploadimage','ImageController@index');   
+
+Route::post('/uploadimage','ImageController@store');
+
+
+Route::get('registration', [App\Http\Controllers\LoginController::class, 'registration'])->name('register');
+Route::post('post-registration', [App\Http\Controllers\LoginController::class, 'postRegistration'])->name('register.post'); 
+
+
+Route::get('login','LoginController@index');   
+Route::get('register','LoginController@register');   
+// Route::get('/login', [LoginController::class, 'index'])->name('login');
+// Route::post('actionlogin','LoginController@actionlogin');   
+Route::post('actionlogin', [App\Http\Controllers\LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::get('actionlogout', [App\Http\Controllers\LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+
+Route::post('postRegistration', [App\Http\Controllers\LoginController::class, 'postRegistration'])->name('postRegistration');
+
 
 Route::resource('','HomeController');
 // Route::get('/', function () {

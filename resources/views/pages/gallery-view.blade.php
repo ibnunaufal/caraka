@@ -26,7 +26,7 @@
                 <div class = "line"></div>
                 <div class = "line"></div>
                 <div class="product">
-                    <img src="https://drive.google.com/uc?export=view&id=0B6wwyazyzml-OGQ3VUo0Z2thdmc" alt="" srcset="">                    
+                    <img src ="{{ URL::to('/') }}/img/logo/{{ $gallery->image }}" alt = "asd">
                     <div style="margin-top: 30px;">
                         <a href="https://wa.me/6281225951789?text=Saya%20ingin%20bertanya%20tentang%20produk%20yang%20dijual%20{{ $gallery->name }}">
                             <img style="margin-left: auto; margin-right: auto; width: 200px;" src="{{ asset('images/icon/btn-wa.svg') }}" alt=""> 

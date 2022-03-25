@@ -66,11 +66,11 @@
                 @foreach ($gallery as $gal)                    
                     <div class = "new-product-item">
                         <a class="btn" href="{{ route('gallery.show',$gal->id) }}">
-                            <div class = "image">
-                                <img src = "images/0560-01.png" alt = "">
+                            <div class = "image" style="text-align:center;">
+                                <img src ="img/logo/{{ $gal->image }}" alt = "asd">
                             </div>
                             <div class = "info">
-                                <span> {{ $gal->name }} </span>
+                                <span> {{ $gal->name }} {{ $gal->image }} </span>
                                 <p class = "name">{{ $gal->name }}</p>
                                 <div class = "price">
                                     <span class = "old text-grey">Meja, Kayu</span>

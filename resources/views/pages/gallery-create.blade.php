@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form action="{{ route('gallery.store') }}" method="POST">
+                    <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="txtName">Name:</label>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Image" name="txtImage">
+                            <input type="file" name="image" class="form-control" placeholder="Post Title">
                         </div>
                         <!-- <div class="form-group">
                             <label for="txtAddress">Address:</label>

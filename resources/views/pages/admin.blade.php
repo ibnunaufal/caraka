@@ -106,7 +106,7 @@ https://drive.google.com/file/u/5/d/19kT1qe4amR-OM4DI65nWgRHNtI5A-6S3/view?usp=d
                     <td class="td-bordered">{{ $gallery->image }}</td>
                     <td class="td-bordered" style="text-align: center;">
                         <form action="{{ route('gallery.destroy',$gallery->id) }}" method="POST" onsubmit="return myFunction()">
-                            <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}">Show</a>
+                            <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}" target="_blank">Show</a>
                             <a class="btn btn-primary" href="{{ route('gallery.edit',$gallery->id) }}">Edit</a>
                             @csrf
                             @method('DELETE')
