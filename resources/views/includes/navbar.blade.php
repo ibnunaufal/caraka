@@ -28,7 +28,14 @@
                 <li><a href = "{{ url('gallery') }}">Gallery</a></li>
                 <!-- <li><a href = "#">Catalogues</a></li> -->
                 <li><a href = "{{ url('locator') }}">Store Locator</a></li>
-                <li><a href = "{{ url('admin') }}">Login</a></li>
+                <!-- <li><a href = "{{ url('admin') }}">Login</a></li> -->
+                @if (Auth::check())
+                    <li><a href = "{{ url('admin') }}">Admin Page</a></li>
+                    <li><a href = "{{ url('actionlogout') }}">Logout</a></li>
+                @endif
+                @if (Auth::guest())
+                    <li><a href = "{{ url('admin') }}">Login</a></li>
+                @endif
                 <li><a href = "#">Search</a></li>
             </ul>
             <!-- end of side navbar -->

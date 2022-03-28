@@ -20,7 +20,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('category.update',$category->id) }}" >
+                    <form method="POST" action="{{ route('category.update',$category->id) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
@@ -29,11 +29,14 @@
                         </div>
                         <div class="form-group">
                             <label for="txtImage">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Image Url" name="txtImage" value="{{ $category->image }}">
+                            <!-- <input type="text" class="form-control" id="txtImage" placeholder="Enter Image Url" name="txtImage" value="{{ $category->image }}"> -->
+                            <img src ="{{ URL::to('/') }}/img/logo/{{ $category->image }}" style="max-height:50px; width:auto;" alt = "asd">
+                            <input type="file" name="image" class="form-control" placeholder="Post Title">
                         </div>
                         <div class="form-group">
                             <label for="txtPdf">Pdf:</label>
-                            <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter PDF Url">{{ $category->pdf }}</textarea>
+                            <!-- <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter PDF Url">{{ $category->pdf }}</textarea> -->
+                            <input type="file" name="pdf" class="form-control" placeholder="Post Title">
                         </div>
                         <!-- <div class="form-group">
                             <label for="txtLastName">Image:</label>

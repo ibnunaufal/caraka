@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -27,7 +28,11 @@ class GalleryController extends Controller
     public function create()
     {
         //
-        return view('pages.gallery-create');
+        // return view('pages.gallery-create');
+        // $category = Category::all();
+        $items = Category::pluck('name', 'image');
+        $selectedID = 1;
+        return view('pages.gallery-create', compact('items'));
     }
 
     /**
@@ -104,7 +109,16 @@ class GalleryController extends Controller
     public function edit(Gallery $gallery)
     {
         //
-        return view('pages/gallery-edit',compact('gallery'));
+        // $items = Category::pluck('name', 'image');
+        // $selectedID = 1;
+        // return view('pages.gallery-create', compact('items'));
+
+        return view('pages.gallery-edit')
+        ->with('items', Category::pluck('name'))
+        ->with('selected', $gallery->category)
+        ->with('gallery', $gallery); 
+        
+        // return view('pages/gallery-edit',compact('gallery'));
     }
 
     /**
@@ -114,22 +128,47 @@ class GalleryController extends Controller
      * @param  \App\Models\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, $id)
     {
         //
         $request->validate([
             'txtName'=>'required',
             'txtPrice'=> 'required',
             'txtCategory' => 'required',
-            'txtImage' => 'required'
         ]);
+
+        // $image = $request->file('image');
+        // $request->image = $image->getClientOriginalName();
+        // $image->move(public_path('img/logo'), $image->getClientOriginalName());
+        // // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
+        // $path = $image->getClientOriginalName();
+        // // time().'.'.$request->file->getClientOriginalExtension();
+            
+        // // $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        // // $request->file->move(public_path('/images/gallert/'), $imageName);
+
+        // $post = new gallery;
+        // $post->name = $request->get('txtName');
+        // $post->price = $request->get('txtPrice');
+        // $post->category = $request->get('txtCategory');
+        // $post->image = $path;
+        // $post->save();
  
  
-        $gallery = gallery::find($id);
+        $gallery = Gallery::find($id);
         $gallery->name = $request->get('txtName');
         $gallery->price = $request->get('txtPrice');
         $gallery->category = $request->get('txtCategory');
-        $gallery->image = $request->get('txtImage');
+        // if($request->hasFile('image')){
+        if($request->image != "" && $request->image != null){
+            error_log('has image.');
+            $image = $request->file('image');
+            $request->image = $image->getClientOriginalName();
+            $image->move(public_path('img/logo'), $image->getClientOriginalName());
+            // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
+            $path = $image->getClientOriginalName();
+            $gallery->image = $path;
+        }
  
         $gallery->update();
  

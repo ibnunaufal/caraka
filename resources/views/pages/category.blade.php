@@ -29,19 +29,10 @@
     <div class="iframe-container">
 
         <!-- <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" width="640" height="480" allow="autoplay"></iframe> -->
-        <?php if ($category->name == "Indoor"): ?>
-            <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php elseif($category->name == "Outdoor"): ?>
-            <iframe src="https://drive.google.com/file/d/1HusY0yPhBM6aR6Clzidbgyqe3QY5WZs_/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php elseif($category->name == "Luxury Bedroom"): ?>
-            <iframe src="https://drive.google.com/file/d/1A-7vunDo9v6QCh5RkxyWFMSCW3Jds4dt/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php elseif($category->name == "Kitchen Ware"): ?>
-            <iframe src="https://drive.google.com/file/d/19kT1qe4amR-OM4DI65nWgRHNtI5A-6S3/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php elseif($category->name == "Resin"): ?>
-            <iframe src="https://drive.google.com/file/d/1sHs4WXIkBtQvfva3sw106-JppH_DhVnJ/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php else: ?>
-            <iframe src="https://drive.google.com/file/d/1sHs4WXIkBtQvfva3sw106-JppH_DhVnJ/preview" allow="autoplay" class="iframe-responsive"></iframe>
-        <?php endif; ?>
+            <embed src="{{ asset('pdf/' . $category->pdf) }}" width="600" height="500" alt="pdf" />
+
+
+       
     </div>
     <div class="row">
         <div class="col-lg-11">

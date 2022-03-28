@@ -67,14 +67,14 @@
                     <div class = "new-product-item">
                         <a class="btn" href="{{ route('gallery.show',$gal->id) }}">
                             <div class = "image" style="text-align:center;">
-                                <img src ="img/logo/{{ $gal->image }}" alt = "asd">
+                                <img src ="img/logo/{{ $gal->image }}" alt = "{{ $gal->image }}">
                             </div>
                             <div class = "info">
-                                <span> {{ $gal->name }} {{ $gal->image }} </span>
+                                <span> {{ $gal->category }} </span>
                                 <p class = "name">{{ $gal->name }}</p>
-                                <div class = "price">
+                                <!-- <div class = "price">
                                     <span class = "old text-grey">Meja, Kayu</span>
-                                </div>
+                                </div> -->
                             </div>
                         </a>
                     </div>

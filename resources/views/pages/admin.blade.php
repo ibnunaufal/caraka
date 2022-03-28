@@ -43,8 +43,9 @@ https://drive.google.com/file/u/5/d/19kT1qe4amR-OM4DI65nWgRHNtI5A-6S3/view?usp=d
                 <tr>
                     <td class="td-bordered">{{ ++$i }}</td>
                     <td class="td-bordered">{{ $category->name }}</td>
-                    <td class="td-bordered">
-                        <a href="{{ $category->image }}" target="_blank">Gambar</a>
+                    <td class="td-bordered" align="center">
+                        <img src ="img/logo/{{ $category->image }}" alt = "{{ $category->image }}" style="max-width: 100px; max-height:100px;object-fit: contain;">
+                        
                     </td>
                     <td class="td-bordered">
                         <a href="{{ $category->pdf }}" target="_blank">PDF</a>
@@ -103,7 +104,9 @@ https://drive.google.com/file/u/5/d/19kT1qe4amR-OM4DI65nWgRHNtI5A-6S3/view?usp=d
                     <td class="td-bordered">{{ $gallery->name }}</td>
                     <td class="td-bordered">{{ $gallery->price }}</td>
                     <td class="td-bordered">{{ $gallery->category }}</td>
-                    <td class="td-bordered">{{ $gallery->image }}</td>
+                    <td class="td-bordered" align="center">
+                        <img src ="img/logo/{{ $gallery->image }}" alt = "{{ $gallery->image }}" style="max-width: 100px; max-height:100px;object-fit: contain;">
+                    </td>
                     <td class="td-bordered" style="text-align: center;">
                         <form action="{{ route('gallery.destroy',$gallery->id) }}" method="POST" onsubmit="return myFunction()">
                             <a class="btn btn-info" href="{{ route('gallery.show',$gallery->id) }}" target="_blank">Show</a>

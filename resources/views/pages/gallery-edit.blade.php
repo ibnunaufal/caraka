@@ -20,7 +20,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="put" action="{{ route('gallery.update',$gallery->id) }}" >
+                    <form method="post" action="{{ route('gallery.update',$gallery->id) }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
                         <div class="form-group">
@@ -33,11 +33,21 @@
                         </div>
                         <div class="form-group">
                             <label for="txtName">Category:</label>
-                            <input type="text" class="form-control" id="txtCategory" placeholder="Enter Category" name="txtCategory" value="{{ $gallery->category }}">
+                            
+                            <select class="form-control" name="txtCategory" value="{{ $gallery->category }}">
+                                <option>Select Item</option>
+                                @foreach ($items as $key => $value)
+                                    <option value="{{ $value }}" {{ ( $items[$key] == $selected) ? 'selected' : '' }}> 
+                                        {{ $items[$key] }} 
+                                    </option>
+                                @endforeach    
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Last Name" name="txtImage" value="{{ $gallery->image }}">
+                            <img src ="{{ URL::to('/') }}/img/logo/{{ $gallery->image }}" style="max-height:50px; width:auto;" alt = "asd">
+                            <input type="file" name="image" class="form-control" placeholder="Post Title" value=" {{ $gallery->image}} ">
+                            <!-- <input type="text" class="form-control" id="txtImage" placeholder="Enter Last Name" name="txtImage" value="{{ $gallery->image }}"> -->
                         </div>
                         <!-- <div class="form-group">
                             <label for="txtLastName">Pdf:</label>

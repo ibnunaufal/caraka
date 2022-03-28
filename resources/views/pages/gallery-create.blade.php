@@ -33,7 +33,15 @@
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Category:</label>
-                            <input type="text" class="form-control" id="txtCategory" placeholder="Enter Category" name="txtCategory">
+                            <select class="form-control" name="product_id">
+                                <option>Select Item</option>
+                                @foreach ($items as $key => $value)
+                                    <option value="{{ $key }}" > 
+                                        {{ $value }} 
+                                    </option>
+                                @endforeach    
+                            </select>
+
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Image:</label>

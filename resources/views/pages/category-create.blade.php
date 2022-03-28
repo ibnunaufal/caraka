@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form action="{{ route('category.store') }}" method="POST">
+                    <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">>
                         @csrf
                         <div class="form-group">
                             <label for="txtName">Name:</label>
@@ -29,11 +29,13 @@
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Image:</label>
-                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Price" name="txtImage">
+                            <!-- <input type="text" class="form-control" id="txtImage" placeholder="Enter Price" name="txtImage"> -->
+                            <input type="file" name="image" class="form-control" placeholder="Post Title">
                         </div>
                         <div class="form-group">
                             <label for="txtLastName">Pdf:</label>
-                            <input type="text" class="form-control" id="txtPdf" placeholder="Enter Category" name="txtPdf">
+                            <!-- <input type="text" class="form-control" id="txtPdf" placeholder="Enter Category" name="txtPdf"> -->
+                            <input type="file" name="pdf" class="form-control" placeholder="Post Title">
                         </div>
                         <!-- <div class="form-group">
                             <label for="txtLastName">Image:</label>

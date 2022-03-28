@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Gallery;
 use App\Models\Category;
 
@@ -17,9 +18,14 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('pages.admin')
-        ->with('gallery', Gallery::all())
-        ->with('category', Category::all()); 
+        if (Auth::check()) {
+            // return redirect('admin');
+            return view('pages.admin')
+            ->with('gallery', Gallery::all())
+            ->with('category', Category::all()); 
+        }else{
+            return redirect('login');
+        }
     }
 
     /**
