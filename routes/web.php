@@ -34,6 +34,7 @@ Route::post('/uploadimage','ImageController@store');
 
 
 Route::get('registration', [App\Http\Controllers\LoginController::class, 'registration'])->name('register');
+// Route::get('admin/edit', [App\Http\Controllers\AdminController::class, 'edit'])->name('edit');
 Route::post('post-registration', [App\Http\Controllers\LoginController::class, 'postRegistration'])->name('register.post'); 
 
 
@@ -48,8 +49,11 @@ Route::post('postRegistration', [App\Http\Controllers\LoginController::class, 'p
 
 
 Route::resource('','HomeController');
-// Route::get('/', function () {
-//     return View::make('home');
+Route::get('about','HomeController@about');   
+// Route::get('about', function () {
+//     $scroll = true;
+//     return view('pages.home', compact('scroll'));
+//     // return View::make('home');
 // });
 Route::get('home', function () {
     return View::make('pages.home');

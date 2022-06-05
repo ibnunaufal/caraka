@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Models\Category;
+use View;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,5 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        View::composer('*', function($view)
+        {
+            $categorynavbar = Category::get();
+            // $categorynavbar = "";
+            $view->with('categorynavbar', $categorynavbar);
+        });
     }
 }

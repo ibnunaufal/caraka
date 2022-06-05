@@ -46,7 +46,6 @@ class GalleryController extends Controller
         //
         $request->validate([
             'txtName'=>'required',
-            'txtPrice'=> 'required',
             'txtCategory' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
@@ -54,7 +53,7 @@ class GalleryController extends Controller
 
         $image = $request->file('image');
         $request->image = $image->getClientOriginalName();
-        $image->move(public_path('img/logo'), $image->getClientOriginalName());
+        $image->move(public_path('img/gallery'), $image->getClientOriginalName());
         // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
         $path = $image->getClientOriginalName();
         // time().'.'.$request->file->getClientOriginalExtension();
@@ -64,7 +63,7 @@ class GalleryController extends Controller
 
         $post = new gallery;
         $post->name = $request->get('txtName');
-        $post->price = $request->get('txtPrice');
+        $post->price = 0;
         $post->category = $request->get('txtCategory');
         $post->image = $path;
         $post->save();
@@ -133,7 +132,6 @@ class GalleryController extends Controller
         //
         $request->validate([
             'txtName'=>'required',
-            'txtPrice'=> 'required',
             'txtCategory' => 'required',
         ]);
 
@@ -157,14 +155,14 @@ class GalleryController extends Controller
  
         $gallery = Gallery::find($id);
         $gallery->name = $request->get('txtName');
-        $gallery->price = $request->get('txtPrice');
+        $gallery->price = '0';
         $gallery->category = $request->get('txtCategory');
         // if($request->hasFile('image')){
         if($request->image != "" && $request->image != null){
             error_log('has image.');
             $image = $request->file('image');
             $request->image = $image->getClientOriginalName();
-            $image->move(public_path('img/logo'), $image->getClientOriginalName());
+            $image->move(public_path('img/gallery'), $image->getClientOriginalName());
             // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
             $path = $image->getClientOriginalName();
             $gallery->image = $path;
@@ -172,7 +170,7 @@ class GalleryController extends Controller
  
         $gallery->update();
  
-        return redirect('/admin')->with('success', 'gallery updated successfully');
+        return redirect('/admin?type=gal')->with('message', 'Gallery updated successfully');
     
     }
 

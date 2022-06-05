@@ -5,6 +5,12 @@
     <div class = "container">
         <div class = "header-content grid text-center">
             <div class = "header-left">
+                @if($scroll)
+                true
+                @endif
+                @if(!$scroll)
+                false
+                @endif
                 <h1>Caraka Furniture</h1>
                 <p class = "text">Caraka Creasindo Furniture is an Indonesian furniture company based in Jepara, Central Java, Indonesia. We are specialized in manufacture and export wooden furniture for more than 10 years. </p>
                 <a href = "#" class = "btn-header text-white bg-brown">Read More</a>
@@ -312,7 +318,7 @@
     <!-- end of latest news section -->
 
     <!-- feedback section -->
-    <section class = "feedback bg-light-grey-color-shade" id = "feedback">
+    <section class = "feedback bg-light-grey-color-shade" id="about">
         <div class = "container">
             <div class = "section-title text-center">
                 <h2>About</h2>
@@ -322,7 +328,7 @@
 
             <div class="about-container">
                 <div class="about-item bg-white text-center"">
-                asdddss asdasd asdasd asdasd asd
+                Caraka Creasindo Furniture is an Indonesian furniture company based in Jepara, Central Java, Indonesia. We are specialized in manufacture and export wooden furniture for more than 10 years.
                 </div>
             </div>
 
@@ -382,5 +388,26 @@
         </div>
     </section> -->
     <!-- end of newsletter section -->
+    <script>
+        // $(document).ready(function () {
+        //     @if($scroll)
+        //         var url = $(this).data('about'); // THE ID OR THE ELEMENT YOU ARE TRYING TO SCROLL TO
+
+        //         //make up for the navbar height     
+        //         var navbar_height = parseInt($('.navbar').css('height').replace('px', ''));
+
+        //         // the 25 is just a bit more margin
+        //         animate_scroll(url, navbar_height, 25);
+        //         // $('html, body').animate({
+        //         //     scrollTop: $('about').offset().top
+        //         // }, 'slow');
+        //     @endif
+        // });
+        // function animate_scroll (element, variable, offset) {
+        //     $('html, body').stop().animate({
+        //         scrollTop: $(element).offset().top - variable - offset
+        //     }, 600);
+        // }
+    </script>
 </main>
 @stop

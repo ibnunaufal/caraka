@@ -21,10 +21,27 @@ class HomeController extends Controller
             'gallery' => Gallery::latest()->take(4)->get(),
             'category'  => Category::take(4)->get()
         );
+        $scroll = false;
         // return view('pages.home', compact('data', 'data'));
         return view('pages.home')
         ->with('gallery', Gallery::latest()->take(4)->get())
-        ->with('category', Category::take(4)->get()); 
+        ->with('category', Category::take(4)->get())
+        ->with('scroll', $scroll); 
+    }
+
+    public function about()
+    {
+        //
+        $data = array(
+            'gallery' => Gallery::latest()->take(4)->get(),
+            'category'  => Category::take(4)->get()
+        );
+        $scroll = true;
+        // return view('pages.home', compact('data', 'data'));
+        return view('pages.home')
+        ->with('gallery', Gallery::latest()->take(4)->get())
+        ->with('category', Category::take(4)->get())
+        ->with('scroll', $scroll); 
     }
 
     /**

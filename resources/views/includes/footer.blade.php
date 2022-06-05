@@ -21,7 +21,7 @@
                 </ul>
             </div>
 
-            <div class = "footer-item">
+            <div class = "footer-item" id="contact">
                 <h3>Contact Us</h3>
                 <p class = "text">Jl. Raya Jepara - Bangsri Rt.03 Rw.01 Ds. Jambu, Mlonggo Jepara , Central Java – Indonesia</p>
                 <p class = "text">Phone: +62 81 325 173 561</p>

@@ -40,15 +40,13 @@ class UserController extends Controller
     {
         //
         $request->validate([
-            'txtFirstName'=>'required',
-            'txtLastName'=> 'required',
-            'txtAddress' => 'required'
+            'txtName'=>'required',
+            'txtEmail'=> 'required'
         ]);
  
-        $student = new Student([
-            'first_name' => $request->get('txtFirstName'),
-            'last_name'=> $request->get('txtLastName'),
-            'address'=> $request->get('txtAddress')
+        $student = new User([
+            'name' => $request->get('txtName'),
+            'email'=> $request->get('txtEmail')
         ]);
  
         $student->save();

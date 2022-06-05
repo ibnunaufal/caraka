@@ -57,7 +57,7 @@ class CategoryController extends Controller
         $pdf = $request->file('pdf');
         $request->image = $image->getClientOriginalName();
         $request->pdf = $pdf->getClientOriginalName();
-        $image->move(public_path('img/logo'), $image->getClientOriginalName());
+        $image->move(public_path('img/category'), $image->getClientOriginalName());
         $pdf->move(public_path('pdf'), $pdf->getClientOriginalName());
         // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
         $path = $image->getClientOriginalName();
@@ -128,7 +128,7 @@ class CategoryController extends Controller
             error_log('has image.');
             $image = $request->file('image');
             $request->image = $image->getClientOriginalName();
-            $image->move(public_path('img/logo'), $image->getClientOriginalName());
+            $image->move(public_path('img/category'), $image->getClientOriginalName());
             // $path = public_path('img/logo').'/'.$image->getClientOriginalName();
             $path = $image->getClientOriginalName();
             $gallery->image = $path;

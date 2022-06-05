@@ -88,10 +88,10 @@
               <!-- <i class='bx bx-up-arrow-alt'></i> -->
               <span class="text">Total:</span>
             </div>
-            <div class="number">{{ $categorySize }}</div>
-            <div class="box-topic">Categories</div>
+            <div class="number">120</div>
+            <div class="box-topic">Tempat</div>
           </div>
-          <i class='bx bx-category-alt cart'></i>
+          <i class='bx bx-map cart'></i>
         </div>
         <div class="box">
           <div class="right-side">
@@ -99,10 +99,10 @@
               <!-- <i class='bx bx-up-arrow-alt'></i> -->
               <span class="text">Total:</span>
             </div>
-            <div class="number">{{ $gallerySize }}</div>
-            <div class="box-topic">Product</div>
+            <div class="number">9</div>
+            <div class="box-topic">Kategori & Sub</div>
           </div>
-          <i class='bx bx-photo-album cart two'></i>
+          <i class='bx bx-category-alt cart two'></i>
         </div>
         <div class="box">
           <div class="right-side">
@@ -110,150 +110,103 @@
               <!-- <i class='bx bx-up-arrow-alt'></i> -->
               <span class="text">Total:</span>
             </div>
-            <div class="number"> {{ $userSize }} </div>
-            <div class="box-topic">Admin</div>
+            <div class="number">9</div>
+            <div class="box-topic">Review</div>
           </div>
-          <i class='bx bx-group cart three'></i>
+          <i class='bx bx-message-dots cart three'></i>
         </div>
-        
+        <div class="box">
+          <div class="right-side">
+            <div class="indicator">
+              <!-- <i class='bx bx-up-arrow-alt'></i> -->
+              <span class="text">Total:</span>
+            </div>
+            <div class="number">9</div>
+            <div class="box-topic">Acara</div>
+          </div>
+          <i class='bx bx-calendar-event cart four'></i>
+        </div>
       </div>
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Recent Product List</div>
-          <div class="sales-details">
-          <div class="table-responsive">
-                <table class="table">
-                    <tr class="table-bordered">
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Category</th>
-                    </tr>
-                    @php
-                        $i = 0;
-                    @endphp
-                    @foreach($gallery as $gal)
-                    <tr class="table-bordered">
-                        <td>{{ $gal->name }}</td>
-                        <td>
-                            <img src="{{URL::to('/')}}/img/gallery/{{$gal->image}}" style="max-height: 100px; max-width:100px; object-fit:content;" alt="">
-                        </td>
-                        <td>
-                            @foreach($category as $q)
-                                @if($q->id == $gal->category)
-                                {{ $q->name }}
-                                @endif
-                            @endforeach
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
-            </div>
-          </div>
-          <div class="button">
-            <a href="/admin?type=gal">Lihat Semua</a>
-          </div>
-        </div>
-        <div class="top-sales box">
-          <div class="title">Category List</div>
-          <div class="sales-details">
-          <div class="table-responsive">
-                <table class="table">
-                    <tr class="table-bordered">
-                        <th>Name</th>
-                        <th>Image</th>
-                    </tr>
-                    @php
-                        $i = 0;
-                    @endphp
-                    @foreach($category as $gal)
-                    <tr class="table-bordered">
-                        <td>{{ $gal->name }}</td>
-                        <td>
-                            <img src="{{URL::to('/')}}/img/category/{{$gal->image}}" style="max-height: 100px; max-width:100px; object-fit:content;" alt="">
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
-            </div>
-          </div>
-          <div class="button">
-            <a href="/admin?type=cat">Lihat Semua</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    @endif
-    @if($type == "cat")
-    <div class="home-content">
-      <div class="sales-boxes" style="width:100%;">
-        <div class="recent-sales box" style="width:100%;">
-          <div class="title">
-            Daftar Kategori
-          </div>
-          <a href="admin/create" class="btn btn-primary" style="font-size: 12px;color: white;margin-bottom: 10px;">
-              Tambah Kategori
-          </a>
+          <div class="title">Daftar Tempat</div>
           <div class="sales-details">
           <div class="table-responsive">
             <table class="table">
                     <tr class="table-bordered">
                         <th>Nama</th>
                         <th>Gambar Utama</th>
-                        <th>PDF</th>
+                        <th>Ticket</th>
+                        <th>Tags</th>
+                        <th>Operasional</th>
                         <th>Aksi</th>
                     </tr>
                     @php
                         $i = 0;
                     @endphp
-                    @foreach($category as $cat)
-                    <tr class="table-bordered">
-                        <td class="td-bordered col-md-2">{{ $cat->name }}</td>
-                        <td class="col-md-1">
-                            <a href="{{URL::to('/')}}/img/category/{{$cat->image}}" target="_blank" rel="noopener noreferrer">
-                            <img src="{{URL::to('/')}}/img/category/{{$cat->image}}"
-                            style="max-width:70px;max-height:70px;" alt="{{$cat->image}}">
-                            </a>
-                        </td>
-                        <td class="td-bordered col-md-4">
-                            <a href="{{$cat->pdf}}" target="_blank" rel="noopener noreferrer">
-                                {{ $cat->pdf }}
-                            </a>
-                        </td>
-                        <td class="td-bordered col-md-1" style="text-align: center;">
-                            <!-- <form action="{{ route('category.destroy',$cat->id) }}" method="POST"> -->
-                                <!-- <button> -->
-                                <a class="btn btn-primary" href="/admin/{{$cat->id}}/edit?type=cat&id={{$cat->id}}"><i class="bx bx-edit"></i></a>
-                                <!-- </button> -->
-                                <form action="{{route('category.destroy', $cat->id)}}" method="POST">    
-                                @method('DELETE')
-                                @csrf
-                                    <button type="submit" class="btn btn-danger" onclick="return myFunctionr();">
-                                        <i class="bx bx-trash"></i>
-                                    </button>                                        
-                                </button>                                        
-                                    </button>                                        
-                                </form>
-                                <script>
-                                function myFunctionr() {
-                                    if(!confirm("Anda yakin akan menghapus tempat ini?"))
-                                    event.preventDefault();
-                                }
-                                </script>
-                            <!-- </form> -->
-                        </td>
-                    </tr>
-                    @endforeach
-                    <tr>
-                        <td colspan="10" class="punyaku">
-                            Jumlah Data : {{ $category->total() }} 
-                            <!-- {{$category->appends(['category' => $category->currentPage()])->links("pagination::bootstrap-4")}} -->
-                            {{ $category->links('pages.pagination.custom') }}
-                            <!-- {{ $category->links("pagination::bootstrap-4") }} -->
-                        </td>
-                    </tr>
+                    
                 </table>
             </div>
+          </div>
+          <div class="button">
+            <a href="/admin?type=temp">Lihat Semua</a>
+          </div>
+        </div>
+        <div class="top-sales box">
+          <div class="title">Daftar Acara</div>
+          <ul class="top-sales-details">
+              <li>
+                  <span class="product">Nama Acara</span>
+                  <span class="price">Mulai</span>
+                  <span class="price">Akhir</span>
+                </li>
+              
+          </ul>
+          <div class="button">
+            <a href="/admin?type=aca">Lihat Semua</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
+    @if($type == "caat")
+    <br><br><br><br>
+    {{ $category }}
+    {{ $category->name }}
+    @endif
+    @if($type == "cat")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div class="home-content">
+      <div class="sales-boxes" style="width:100%;">
+        <div class="recent-sales box" style="width:100%;">
+          <div class="title">
+            Daftar Kategori
+          </div>
+          <div class="sales-details">
+          <div class="table-responsive">
+          <form method="post" action="{{ route('category.update',$category->id) }}" enctype="multipart/form-data">
+                        @method('PATCH')
+                        @csrf
+                        <div class="form-group">
+                            <label for="txtName">Name:</label>
+                            <input type="text" class="form-control" id="txtName" placeholder="Enter First Name" name="txtName" value="{{ $category->name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtLastName">Image:</label><br>
+                            <img src ="{{ URL::to('/') }}/img/category/{{ $category->image }}" style="max-height:50px; width:auto;" alt = "asd">
+                            <input type="file" name="image" class="form-control" placeholder="Post Title" value=" {{ $category->image}} ">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPdf">PDF:</label>
+                            <input type="text" class="form-control" id="txtPdf" placeholder="Enter PDF Link" name="txtPdf" value="{{ $category->pdf }}">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
           </div>
           <!-- <div class="button">
             <a href="/admin?type=temp">Lihat Semua</a>
@@ -261,6 +214,12 @@
         </div>
       </div>
     </div>
+    @endif
+    @if($type == "a")
+    <br><br><br><br><br>
+    a <br>
+    {{ $gallery }} <br> <br>
+    {{ $category }}
     @endif
     @if($type == "gal")
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -270,10 +229,7 @@
         <div class="home-content">
         <div class="sales-boxes" style="width:100%;">
             <div class="recent-sales box" style="width:100%;">
-            <div class="title">Product List</div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin:5px;">
-                Add Product
-                </button>
+            <div class="title">Edit Product</div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -284,120 +240,50 @@
                         </ul>
                     </div>
                 @endif
-                @if(session('message'))
-                <div class="alert alert-primary">
-                    {{session('message')}}
-                </div>
-                @endif
                 <div class="sales-details">
                     <div class="table-responsive">
-                        <table class="table">
-                            <tr class="table-bordered">
-                                <th>Nama</th>
-                                <th>Gambar Utama</th>
-                                <th>Category</th>
-                                <th>Aksi</th>
-                            </tr>
-                            @php
-                                $i = 0;
-                            @endphp
-                            @foreach($gallery as $temp)
-                            <tr class="table-bordered">
-                                <td class="td-bordered col-md-2">{{ $temp->name }}</td>
-                                <td class="col-md-1">
-                                    <a href="{{URL::to('/')}}/img/gallery/{{$temp->image}}" target="_blank" rel="noopener noreferrer">
-                                    <img src="{{URL::to('/')}}/img/gallery/{{$temp->image}}"
-                                    style="max-width:70px;max-height:70px;" alt="{{$temp->image}}">
-                                    </a>
-                                </td>
-                                <td class="td-bordered col-md-4">
-                                    @foreach($category as $l)
-                                        @if($l->id == $temp->category)
-                                        {{ $l->name }}
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td class="td-bordered col-md-1" style="text-align: center;">
-                                    <!-- <form action="{{ route('gallery.destroy',$temp->id) }}" method="POST"> -->
-                                        <!-- <button> -->
-                                        <a class="btn btn-primary" href="/admin/{{$temp->id}}/edit?type=gal&id={{$temp->id}}"><i class="bx bx-edit"></i></a>
-                                        <!-- </button> -->
-                                        <form action="{{route('gallery.destroy', $temp->id)}}" method="POST">    
-                                        @method('DELETE')
-                                        @csrf
-                                            <button type="submit" class="btn btn-danger" onclick="return myFunctionr();">
-                                                <i class="bx bx-trash"></i>
-                                            </button>                                        
-                                        </button>                                        
-                                            </button>                                        
-                                        </form>
-                                        <script>
-                                        function myFunctionr() {
-                                            if(!confirm("Are you sure want to delete this product?"))
-                                            event.preventDefault();
-                                        }
-                                        </script>
-                                    <!-- </form> -->
-                                </td>
-                            </tr>
-                            @endforeach
-                            <tr>
-                                <td colspan="10" class="punyaku">
-                                    Jumlah Data : {{ $gallery->total() }} 
-                                    {{ $gallery->links('pages.pagination.custom') }}
-                                </td>
-                            </tr>
-                        </table>  
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <style>
-            .show{
-                background: #00000075;
-            }
-        </style>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Gallery</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal-body">
+                    <form method="post" action="{{ route('gallery.update',$gallery->id) }}" enctype="multipart/form-data">
+                        @method('PATCH')
+                        @csrf
                         <div class="form-group">
                             <label for="txtName">Name:</label>
-                            <input type="text" class="form-control" id="txtName" placeholder="Enter Name" name="txtName">
+                            <input type="text" class="form-control" id="txtName" placeholder="Enter First Name" name="txtName" value="{{ $gallery->name }}">
                         </div>
                         <div class="form-group">
-                            <label for="txtLastName">Category:</label>
-                            <select class="form-control" style="height: fit-content;" id="txtCategory" name="txtCategory">
+                            <label for="txtName">Category:</label>
+                            
+                            <select class="form-control" name="txtCategory" value="{{ $gallery->category }}">
                                 <option>Select Item</option>
                                 @foreach ($category as $cat)
-                                    <option value="{{ $cat->name }}" > 
-                                        {{ $cat->name }} 
-                                    </option>
+                                    <option value="{{$cat->id}}" {{ $cat->id == $gallery->category ? 'selected' : '' }}>{{$cat->name}}</option>
                                 @endforeach    
                             </select>
-
                         </div>
                         <div class="form-group">
-                            <label for="txtLastName">Image:</label>
-                            <input type="file" name="image" class="form-control" placeholder="Post Title" style="height: fit-content;">
+                            <label for="txtLastName">Image:</label><br>
+                            <img src ="{{ URL::to('/') }}/img/gallery/{{ $gallery->image }}" style="max-height:50px; width:auto;" alt = "asd">
+                            <input type="file" name="image" class="form-control" placeholder="Post Title" value=" {{ $gallery->image}} ">
+                            <!-- <input type="text" class="form-control" id="txtImage" placeholder="Enter Last Name" name="txtImage" value="{{ $gallery->image }}"> -->
                         </div>
+                        <!-- <div class="form-group">
+                            <label for="txtLastName">Pdf:</label>
+                            <textarea class="form-control" id="txtPdf" name="txtPdf" rows="2" placeholder="Enter Address">{{ $gallery->pdf }}</textarea>
+                        </div> -->
+                        <!-- <div class="form-group">
+                            <label for="txtLastName">Image:</label>
+                            <input type="text" class="form-control" id="txtImage" placeholder="Enter Image" name="txtImage">
+                        </div> -->
+                        <!-- <div class="form-group">
+                            <label for="txtAddress">Address:</label>
+                            <textarea class="form-control" id="txtAddress" name="txtAddress" rows="10" placeholder="Enter Address"></textarea>
+                        </div> -->
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
                 </div>
             </div>
+        </div>
         </div>
     @endif
     @if($type == "user")
@@ -700,7 +586,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 4 - 15px);
     background: #fff;
     padding: 15px 14px;
     border-radius: 12px;
